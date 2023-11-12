@@ -23,9 +23,10 @@ internal partial class Program
             .ToList();
 
         AnsiConsole.MarkupLine("[cyan]All books[/]");
+
         foreach (var book in books)
         {
-            Console.WriteLine($"{book.Id,-3}{book.Title.PadRight(70, '.')}" +
+            Console.WriteLine($"{book.Id, -3}{book.Title.Ellipsis(60)}" +
                               $"{book.Price,-8:C}{book.Category.Description}");
         }
 
@@ -38,9 +39,10 @@ internal partial class Program
        
         foreach (var book in books)
         {
-            Console.WriteLine($"{book.Id,-3}{book.Title.PadRight(70,'.')}" +
+            Console.WriteLine($"{book.Id, -3}{book.Title.Ellipsis(60)}" +
                               $"{book.Price,-8:C}{book.Category.Description}");
         }
+
 
         AnsiConsole.MarkupLine("[cyan]Done[/]");
         SpectreConsoleHelpers.ExitPrompt();
